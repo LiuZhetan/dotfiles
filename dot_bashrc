@@ -115,30 +115,26 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-. "$HOME/.cargo/env"
 
-#set proxy
-host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
-export http_proxy="http://$host_ip:7890"
-export https_proxy="http://$host_ip:7890"
-export NEMU_HOME=/home/liuzhetan/ics-pa/nemu
-export AM_HOME=/home/liuzhetan/ics-pa/abstract-machine
-export PATH="$NEMU_HOME:$AM_HOME:$PATH"
+# add proxy
+alias proxy="source /home/ubuntu_wsl/proxy_conf.sh"
 
-#add unikraft path
-export KRAFT_PATH=/home/liuzhetan/.local/bin
-export PATH="$KRAFT_PATH:$PATH"
-export UK_KRAFT_GITHUB_TOKEN=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
+# ics-pa
+#export NEMU_HOME=/home/liuzhetan/ics-pa/nemu
+#export AM_HOME=/home/liuzhetan/ics-pa/abstract-machine
+#export PATH="$NEMU_HOME:$AM_HOME:$PATH"
 
-#add ccache path
-export PATH="/usr/lib/ccache:$PATH"
+# add unikraft path
+#export KRAFT_PATH=/home/ubuntu_wsl/.local/bin
+#export PATH="$KRAFT_PATH:$PATH"
+#export UK_KRAFT_GITHUB_TOKEN=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
 
-#add golang patH
-export GOLANG_BIN_PATH=$HOME/go/bin
-export PATH="$GOLANG_BIN_PATH:$PATH"
+# add local command
+export PATH="/usr/local/bin:$PATH"
 
-#add bfg
-alias bfg="java -jar /bin/bfg.jar"
+# add user command
+export PATH="/home/ubuntu_wsl/bin:$PATH"
 
-#add local command
- export PATH="/usr/local/bin:$PATH"
+# add alias
+alias python="python3"
+alias che="chezmoi"
