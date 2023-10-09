@@ -1,0 +1,6 @@
+# add proxy
+alias proxy="source /home/ubuntu_wsl/proxy_conf.sh"
+alias python="python3"
+alias che="chezmoi"
+alias dotfile="chezmoi"
+alias confvim="source ~/.bashrc"
